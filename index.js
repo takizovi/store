@@ -32,7 +32,7 @@ card.addEventListener("mousemove", function (event) {
   scale(1.5)`;
 
   card.style.filter = `brightness(${brightness(event.y/10+window.scrollY/10, centerY/10)})`;
-  card.style.boxShadow = `0 0 25px rgba(255, 126, 95, 0.7)`;
+  card.style.boxShadow = `0 0 25px rgba(95, 188, 255, 0.7)`;
 })
 
 card.addEventListener("mouseleave", function (event) {
@@ -45,3 +45,4 @@ card.addEventListener("mouseleave", function (event) {
 
 let deb = document.getElementById('debug');
 intervalId = window.setInterval(function () { deb.innerHTML = window.scrollY; }, 1000);
+

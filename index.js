@@ -1,4 +1,4 @@
-window.scrollY=0;
+window.scrollTo(0, 0);
 const cards = document.querySelectorAll('.icon');
 
 cards.forEach(card => {
@@ -44,3 +44,4 @@ card.addEventListener("mouseleave", function (event) {
 })
 
 });
+

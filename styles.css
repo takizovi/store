@@ -43,6 +43,13 @@ body {
       box-shadow: var(--shadow);
       user-select:none; pointer-events:none;
     }
+    #debug{
+      position:fixed; right:16px; bottom:64px; padding:10px 14px; border-radius:999px;
+      background:rgba(17,24,39,.6); border:1px solid rgba(255,255,255,.08);
+      color:var(--muted); font-size:14px; backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      user-select:none; pointer-events:none;
+    }
   header{
       position:sticky; top:0; z-index:10;
       backdrop-filter: saturate(160%) blur(8px);

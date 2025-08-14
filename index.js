@@ -1,6 +1,5 @@
-window.scrollTo(0, 0);
+document.body.scrollTop = document.documentElement.scrollTop = 0;
 const cards = document.querySelectorAll('.icon');
-
 cards.forEach(card => {
 let rect = card.getBoundingClientRect();
 let centerX = rect.left + rect.width / 2;
@@ -42,6 +41,7 @@ card.addEventListener("mouseleave", function (event) {
   card.style.filter = `brightness(1)`;
   card.style.boxShadow = `0 0 0 0 rgba(48, 65, 0, 0.5)`;
 })
-
 });
 
+let deb = document.getElementById('debug');
+intervalId = window.setInterval(function () { deb.innerHTML = window.scrollY; }, 1000);

@@ -1,3 +1,4 @@
+window.scrollY=0;
 const cards = document.querySelectorAll('.icon');
 
 cards.forEach(card => {
@@ -41,4 +42,5 @@ card.addEventListener("mouseleave", function (event) {
   card.style.filter = `brightness(1)`;
   card.style.boxShadow = `0 0 0 0 rgba(48, 65, 0, 0.5)`;
 })
+
 });

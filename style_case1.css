@@ -6,8 +6,15 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
+topsec {
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+}
 section {
-    height: 100vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,6 +149,24 @@ header{
     gap: 24px;
     z-index: 1500;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+topsec button {
+    /*background: linear-gradient(-90deg, rgb(108, 108, 108) 0%, transparent 100%);*/
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 40px 60px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background 0.3s;
+}
+
+topsec button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+    transition: transform 0.2s;
 }
 
 .bottom-panel button {

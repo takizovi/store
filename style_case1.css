@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #3c0b51, #000000);
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 180px);
+    grid-gap: 50px;
+}
+.icon {
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    backdrop-filter: saturate(160%) blur(8px);
+    background-image: url("do.jpg");
+    background-size: 180px;
+    /*background: linear-gradient(135deg, #ff6340, #35005a);*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    transition: .2s;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+.icon::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at var(--gloss-x, 0%) var(--gloss-y, 0%),
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0.2) 30%,
+        rgba(255, 255, 255, 0) 60%
+    );
+    pointer-events: none;
+    transition: background-position 0.1s ease-out;
+}
+.icon:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px rgba(255, 126, 95, 0.7);
+}
+.scroll-hint{
+    position:fixed; right:16px; bottom:16px; padding:10px 14px; border-radius:999px;
+    background:rgba(17,24,39,.6); border:1px solid rgba(255,255,255,.08);
+    color:var(--muted); font-size:14px; backdrop-filter: blur(6px);
+    box-shadow: var(--shadow);
+    user-select:none; pointer-events:none;
+}
+#debug{
+    position:fixed; right:16px; bottom:64px; padding:10px 14px; border-radius:999px;
+    background:rgba(17,24,39,.6); border:1px solid rgba(255,255,255,.08);
+    color:var(--muted); font-size:14px; backdrop-filter: blur(6px);
+    box-shadow: var(--shadow);
+    user-select:none; pointer-events:none;
+}
+header{
+    position:sticky; top:0; z-index:10;
+    backdrop-filter: saturate(160%) blur(8px);
+    background: linear-gradient(180deg, rgba(17,24,39,.85), rgba(17,24,39,.55));
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+.wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px}
+.brand{font-weight:700;letter-spacing:.4px}
+.hint{margin-left:auto;color:var(--muted);font-size:14px}
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100%;
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(8px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+    z-index: 1000;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+.side-panel:hover {
+    width: 300px;
+}
+.side-panel a {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-decoration: none;
+}
+.side-panel a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.side-panel .label {
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+}
+.side-panel:hover .label {
+    opacity: 1;
+}
+
+.bottom-panel {
+    position: fixed;
+    bottom: 40px; /* отступ от нижней границы */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 20px 20px;
+    display: flex;
+    gap: 24px;
+    z-index: 1500;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.bottom-panel button {
+    /*background: linear-gradient(-90deg, rgb(108, 108, 108) 0%, transparent 100%);*/
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 40px 60px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background 0.3s;
+}
+
+.bottom-panel button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    /*background: linear-gradient(-90deg, rgb(108, 108, 108) 0%, rgba(255, 255, 255, 0.1) 100%);*/
+}
